@@ -5,7 +5,7 @@ import time
 import os
 import glob
 
-EPISODES = 20
+EPISODES = 10
 
 if __name__ == "__main__":
     models_dir = "models/PPO" + str(int(time.time()))
@@ -33,6 +33,6 @@ if __name__ == "__main__":
 
     model = PPO("MlpPolicy", env, verbose=1, tensorboard_log=log_dir)
     for episode in range(1, EPISODES + 1):
-        model.learn(total_timesteps=10000, reset_num_timesteps=False)
+        model.learn(total_timesteps=5000, reset_num_timesteps=False)
         model.save(f"{models_dir}/{episode}")
 
