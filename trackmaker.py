@@ -32,7 +32,7 @@ if __name__ == "__main__":
                     blocks[y][x] = GoalPoint(screen, x, y)
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_s:
-                    with open(output_file + '.track', 'w') as f:
+                    with open('tracks/' + output_file + '.track', 'w') as f:
                         f.write(f'{width} {height}\n')
                         for y in blocks:
                             f.write(''.join(map(lambda b: b.flag, y))+'\n')
